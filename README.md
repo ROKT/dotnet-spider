@@ -23,6 +23,8 @@ curl \
 
 ```
 
+To find an example of the code-scanning API go to ```scripts/upload-sarif.sh```. Note that the ```authorization_token``` and other ```sensitive``` values are removed from the script. 
+
 **Permissions required**
 
 ```security_events``` permission is required for either the personal access token or Github App being used. 
