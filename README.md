@@ -16,3 +16,7 @@ curl \
   -d '{"commit_sha":"commit_sha","ref":"ref","sarif":"sarif"}'
 
 ```
+
+** Permissions required **
+
+```security_events``` permission is required for either the personal access token or Github App being used. 
