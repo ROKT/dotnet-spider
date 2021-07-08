@@ -1,0 +1,8 @@
+# Ignore props and json files from dotnet restore
+
+**/*.json
+**/*.props
+**/*.targets
+**/*.cache
+**/*.js
+**/*.css
