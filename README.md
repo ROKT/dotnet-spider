@@ -2,6 +2,8 @@
 
 This repository is created only to demonstrate the use of Code Scanning Alerts. This is a public repository within Rokt. 
 
+Link to the original public repository: [Dotnet Spider](https://github.com/dotnetcore/DotnetSpider)
+
 This is sample code scanning API for uploading SARIF results to Github.
 
 commit_sha will be replaced by the actual commit it. 
