@@ -1,5 +1,6 @@
 # Fork of Dotnet Spider
 
+**Description**
 This repository is created only to demonstrate the use of Code Scanning Alerts. This is a public repository within Rokt. 
 
 Link to the original public repository: [Dotnet Spider](https://github.com/dotnetcore/DotnetSpider)
@@ -19,6 +20,6 @@ curl \
 
 ```
 
-** Permissions required **
+**Permissions required**
 
 ```security_events``` permission is required for either the personal access token or Github App being used. 
