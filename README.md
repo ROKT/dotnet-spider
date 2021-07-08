@@ -8,9 +8,11 @@ Link to the original public repository: [Dotnet Spider](https://github.com/dotne
 
 This is sample code scanning API for uploading SARIF results to Github.
 
-commit_sha will be replaced by the actual commit it. 
-ref will be replaced by the git reference, output of the command ```git show-ref```. 
-sarif will be replaced by the base64 value of gzip'd "sarif results file".
+```commit_sha``` will be replaced by the actual commit it.
+
+```ref``` will be replaced by the git reference, output of the command ```git show-ref```. 
+
+```sarif``` will be replaced by the base64 value of gzip'd "sarif results file".
 
 ```
 curl \
