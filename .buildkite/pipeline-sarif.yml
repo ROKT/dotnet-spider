@@ -1,7 +1,7 @@
 steps:
 #  - command: ls
   - plugins:
-      - git@bitbucket.org:ROKT/upload-sarif-buildkite-plugin.git:
+      - "git@bitbucket.org:ROKT/upload-sarif-buildkite-plugin.git":
           repository: 'dotnet-spider'
           commit: ${BUILDKITE_COMMIT} # Need to get the commit_sha from an env variable
 
