@@ -1,5 +1,5 @@
 steps:
-  - command: ls
+#  - command: ls
     plugins:
       - ROKT/upload-sarif#v1.0.0:
           repository: 'dotnet-spider'
