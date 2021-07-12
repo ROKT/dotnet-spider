@@ -1,5 +1,5 @@
 env:
-  SARIF_TOKEN: $${SARIFTOKEN}
+  SARIF_TOKEN: ${SARIFTOKEN}
 
 steps:
   - label: ":microscope: SARIF "
@@ -17,6 +17,6 @@ steps:
           propogate-environment: true
       - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#a1a23f0eaf6712e5c94f4124c25be23becd4b936":
           repository: 'dotnet-spider'
-          commit: ${SARIF_TOKEN}
+          commit: ${SARIFTOKEN}
           sariftoken: ${SARIFTOKEN}
       
