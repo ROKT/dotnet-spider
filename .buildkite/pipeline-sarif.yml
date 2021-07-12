@@ -1,5 +1,6 @@
 steps:
   - label: ":microscope: SARIF "
+    commands: 'echo \$TOKEN'
     plugins:
       - seek-oss/aws-sm#v2.0.0:
           env:
@@ -12,4 +13,3 @@ steps:
           image: alpine
           environment: 
             - TOKEN
-          command: ["ls", "echo $BUILDKITE_COMMIT", "echo $$TOKEN"]
