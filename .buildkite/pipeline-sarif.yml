@@ -10,4 +10,4 @@ steps:
           token: ${TOKEN}
       - docker#v3.3.0:
           image: alpine
-          command: ["ls"]
+          command: ["ls", "echo $BUILDKITE_COMMIT", "echo $TOKEN"]
