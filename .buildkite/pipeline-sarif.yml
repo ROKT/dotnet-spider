@@ -1,9 +1,10 @@
+env:
+  SARIF_TOKEN: $${SARIFTOKEN}
+
 steps:
   - label: ":microscope: SARIF "
     commands:
       - "echo SARIFTOKEN: $${SARIFTOKEN}"
-    env: 
-      SARIFTOKEN
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
@@ -13,8 +14,8 @@ steps:
           environment: 
             - "SARIFTOKEN"
           propogate-environment: true
-      - ROKT/upload-sarif-buildkite-plugin:
+      - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#a1a23f0eaf6712e5c94f4124c25be23becd4b936":
           repository: 'dotnet-spider'
-          commit: \$SARIFTOKEN
+          commit: ${SARIF_TOKEN}
           sariftoken: ${SARIFTOKEN}
       
