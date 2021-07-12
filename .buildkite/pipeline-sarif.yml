@@ -1,4 +1,4 @@
-SARIF_TOKEN: ${SARIFTOKEN}
+SARIF_TOKEN: $${SARIFTOKEN}
 
 steps:
   - label: ":microscope: SARIF "
