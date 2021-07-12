@@ -8,3 +8,6 @@ steps:
           repository: 'dotnet-spider'
           commit: ${BUILDKITE_COMMIT} # Need to get the commit_sha from an env variable
           token: $${TOKEN}
+      - docker#v3.3.0:
+          image: alpine
+          commands: "echo Hello from this pipeline"
