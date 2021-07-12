@@ -4,7 +4,7 @@ steps:
       - seek-oss/aws-sm#v2.0.0:
           env:
               TOKEN: "arn:aws:secretsmanager:us-west-2:035088524874:secret:sarif-token-RgG91g"
-      - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#e1c75d5725012f6f7241b2dd595ff84d7e12e01a":
+      - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#a480d1689c0269e5324d1c31b1b2e9d2ba002eb2":
           repository: 'dotnet-spider'
           commit: ${BUILDKITE_COMMIT} # Need to get the commit_sha from an env variable
           token: TOKEN
