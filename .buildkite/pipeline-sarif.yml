@@ -10,4 +10,4 @@ steps:
           token: $${TOKEN}
       - docker#v3.3.0:
           image: alpine
-          commands: "echo Hello from this pipeline"
+          command: ["echo Hello from this pipeline"]
