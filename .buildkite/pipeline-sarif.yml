@@ -15,6 +15,6 @@ steps:
           propogate-environment: true
       - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#a1a23f0eaf6712e5c94f4124c25be23becd4b936":
           repository: 'dotnet-spider'
-          commit: SARIFTOKEN
+          commit: \$SARIFTOKEN
           sariftoken: ${SARIFTOKEN}
       
