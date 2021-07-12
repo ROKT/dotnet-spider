@@ -5,6 +5,7 @@ steps:
   - label: ":microscope: SARIF "
     commands:
       - "echo SARIFTOKEN: $${SARIFTOKEN}"
+      - "export SARIFTOKEN=$${SARIFTOKEN}"
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
