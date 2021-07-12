@@ -7,7 +7,7 @@ steps:
       - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#ce7c663e49e9e95776ac32e1d6fca8a4a417ca01":
           repository: 'dotnet-spider'
           commit: ${BUILDKITE_COMMIT} # Need to get the commit_sha from an env variable
-          token: "TOKEN"
+          token: TOKEN
       - docker#v3.3.0:
           image: alpine
           environment: 
