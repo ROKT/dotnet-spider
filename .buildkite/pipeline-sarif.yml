@@ -1,5 +1,5 @@
 steps:
-  - command: ls
+  - command: "echo Hello from this pipeline"
   - plugins:
       - seek-oss/aws-sm#v2.0.0:
           env:
@@ -10,4 +10,3 @@ steps:
           token: $${TOKEN}
       - docker#v3.3.0:
           image: alpine
-          command: ["echo Hello from this pipeline"]
