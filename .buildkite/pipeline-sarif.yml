@@ -1,7 +1,7 @@
 steps:
   - label: ":microscope: SARIF "
     commands:
-      - "echo SARIFTOKEN: ${SARIFTOKEN}"
+      - "echo SARIFTOKEN: $${SARIFTOKEN}"
     env: 
       SARIFTOKEN
     plugins:
