@@ -5,7 +5,7 @@ steps:
     env: 
       SARIFTOKEN
     plugins:
-      - seek-oss/aws-sm#v2.0.0:
+      - seek-oss/aws-sm#v2.3.1:
           env:
             SARIFTOKEN: "arn:aws:secretsmanager:us-west-2:035088524874:secret:sarif-token-RgG91g"
       - docker#v3.3.0:
