@@ -3,12 +3,12 @@ steps:
     plugins:
       - seek-oss/aws-sm#v2.0.0:
           env:
-              TOKEN: "arn:aws:secretsmanager:us-west-2:035088524874:secret:sarif-token-RgG91g"
-      - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#a480d1689c0269e5324d1c31b1b2e9d2ba002eb2":
+              SARIFTOKEN: "arn:aws:secretsmanager:us-west-2:035088524874:secret:sarif-token-RgG91g"
+      - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#857375998e7016b42dbc20458911914590d0d56c":
           repository: 'dotnet-spider'
           commit: ${BUILDKITE_COMMIT} # Need to get the commit_sha from an env variable
-          token: TOKEN
+          token: ${SARIFTOKEN}
       - docker#v3.3.0:
           image: alpine
           environment: 
-            - TOKEN
+            - SARIFTOKEN
