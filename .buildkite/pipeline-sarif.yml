@@ -16,5 +16,5 @@ steps:
       - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#a1a23f0eaf6712e5c94f4124c25be23becd4b936":
           repository: 'dotnet-spider'
           commit: ${BUILDKITE_COMMIT} # Need to get the commit_sha from an env variable
-          sariftoken: "\${SARIFTOKEN}"
+          sariftoken: "$${SARIFTOKEN}"
       
