@@ -1,5 +1,6 @@
 steps:
-  - plugins:
+  - label: ":microscope: SARIF "
+    plugins:
       - seek-oss/aws-sm#v2.0.0:
           env:
               TOKEN: sarif-token
