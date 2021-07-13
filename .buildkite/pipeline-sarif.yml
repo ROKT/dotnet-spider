@@ -6,7 +6,7 @@ steps:
       - seek-oss/aws-sm#v2.3.1:
           env:
             SARIFT_SECRET: "arn:aws:secretsmanager:us-west-2:035088524874:secret:sarif-token-RgG91g"
-      - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#90d6f1a99f132dc01a1edcb85f0ef51c9812cb0a":
+      - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#b2b5cffd8d9fda57a0996893345da845744a1de0":
           repository: 'dotnet-spider'
           sarift: "SARIFT_SECRET"
           commit: ${BUILDKITE_COMMIT}
