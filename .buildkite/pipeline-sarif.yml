@@ -12,9 +12,4 @@ steps:
           sarift: "$$SARIFT"
           commit: ${BUILDKITE_COMMIT}
           #sariftoken: "value"
-      - docker#v3.3.0:
-          image: alpine
-          environment: 
-            - "SARIFT"
-          propogate-environment: true
       
