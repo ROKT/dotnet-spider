@@ -2,4 +2,5 @@
 
 set -euo pipefail
 
-export file=$(gzip -c sarif.txt | base64)
+export file_value=$(gzip -c sarif.txt | base64)
+echo $file_value
