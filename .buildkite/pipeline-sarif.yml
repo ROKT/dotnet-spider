@@ -2,6 +2,9 @@ steps:
   - label: ":microscope: SARIF "
     commands:
       - "echo Preparing SARIF file for Github"
+      - "echo --- Directory structure"
+      - "pwd"
+      - "ls"
       - "file=$(gzip -c sarif.txt | base64)"
       - "export file"
       - "echo $file"
