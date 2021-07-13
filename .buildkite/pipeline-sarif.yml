@@ -4,8 +4,8 @@ env:
 steps:
   - label: ":microscope: SARIF "
     commands:
-      - export file_value=$(gzip -c sarif.txt | base64)
-      - echo $file_value
+      - "export file_value=$(gzip -c sarif.txt | base64)"
+      - "echo $file_value"
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
