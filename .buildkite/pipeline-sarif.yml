@@ -13,5 +13,5 @@ steps:
           repository: 'dotnet-spider'
           sarift: "SARIFT_SECRET"
           commit: ${BUILDKITE_COMMIT}
-          file: "file"
+          file: "$(gzip -c sarif.txt | base64)"
       
