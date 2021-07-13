@@ -1,8 +1,7 @@
 steps:
   - label: ":microscope: SARIF "
     commands:
-      - "export file_value='file'"
-      - "env | grep file"
+      - "./scripts/prepare-file.sh"
     env:
       file_value: file_value
     plugins:
