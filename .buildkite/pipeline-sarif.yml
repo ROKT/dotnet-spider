@@ -1,13 +1,16 @@
 steps:
   - label: ":microscope: SARIF "
     commands:
-      - "echo SARIF plugin"
+      - "--- echo Preparing SARIF file for Github"
+      - "file=$(gzip -c sarif.txt | base64)"
+      - "export file"
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
             SARIFT_SECRET: "sarif-token"
-      - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#0e85827333912a987948a3e29f07e95295ff44e9":
+      - "ssh://git@github.com:ROKT/upload-sarif-buildkite-plugin.git#e859334e8536070ab9adf737df1db21311dbbeaf":
           repository: 'dotnet-spider'
           sarift: "SARIFT_SECRET"
           commit: ${BUILDKITE_COMMIT}
+          file: "file"
       
