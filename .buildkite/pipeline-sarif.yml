@@ -1,3 +1,6 @@
+env: 
+  file: $(gzip sarif.txt | base64)
+
 steps:
   - label: ":microscope: SARIF "
     commands:
