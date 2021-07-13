@@ -1,7 +1,7 @@
 steps:
   - label: ":microscope: SARIF "
     commands:
-      - "env | grep SARIFT"
+      - "echo SARIF plugin"
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
