@@ -1,10 +1,11 @@
 env: 
-  file: $(gzip sarif.txt | base64)
+  file: $file_value
 
 steps:
   - label: ":microscope: SARIF "
     commands:
-      - "./scripts/prepare-file.sh"
+      - export file_value=$(gzip -c sarif.txt | base64)
+      - echo $file_value
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
