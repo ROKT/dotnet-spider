@@ -9,7 +9,7 @@ steps:
       - "ssh://git@bitbucket.org/ROKT/upload-sarif-buildkite-plugin.git#9cbe6d748af2e77d6aa958c716bbe213d5ee1e86":
           repository: 'dotnet-spider'
           env: SARIFT
-          sarift: "$$SARIFT"
+          sarift: $SARIFT
           commit: ${BUILDKITE_COMMIT}
           #sariftoken: "value"
       
