@@ -1,7 +1,7 @@
 steps:
   - label: ":microscope: SARIF "
     commands:
-      - "--- echo Preparing SARIF file for Github"
+      - "echo Preparing SARIF file for Github"
       - "file=$(gzip -c sarif.txt | base64)"
       - "export file"
     plugins:
