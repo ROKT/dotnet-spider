@@ -2,13 +2,11 @@ steps:
   - label: ":microscope: SARIF "
     commands:
       - "./scripts/prepare-file.sh"
-    env:
-      file_value: file_value
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
             SARIFT_SECRET: "sarif-token"
-      - "ssh://git@github.com/ROKT/upload-sarif-buildkite-plugin.git#1e7a4105df9a63668350be6d3037b5b40f5d4151":
+      - "ssh://git@github.com/ROKT/upload-sarif-buildkite-plugin.git#10843746bbea39c2de21532d3005770e28b3d4cc":
           repository: 'dotnet-spider'
           sarift: "SARIFT_SECRET"
           commit: ${BUILDKITE_COMMIT}
