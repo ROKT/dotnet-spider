@@ -4,7 +4,7 @@ steps:
       - "export file_value='file'"
       - "env | grep file"
     env:
-      file_value: $file_value
+      file_value: file_value
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
