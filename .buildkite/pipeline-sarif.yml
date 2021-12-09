@@ -1,13 +1,34 @@
+env:
+  SONARQUBE_ACCESS_TOKEN: "rokt-sonarqube-access-token"
+  PLATFORM_AWS_ACCOUNT_ID: "035088524874"
+  BUILDER_IMAGE: "dotnet-sdk-5.0-builder"
+  BUILDER_TAG: "buildkite-4"
+  SCRIPT_PATH: ".buildkite/scripts"
+
 steps:
-  - label: ":microscope: SARIF "
-    commands:
-      - "./scripts/prepare-file.sh"
+  - label: ":sonarqube: SecurityCodeScan + SonarQube SAST"
+    command:
+      - "./${SCRIPT_PATH}/dotnet-build-sast.sh $${SONARQUBE_TOKEN_VALUE}"
+    artifact_paths:
+      - "scs_results.txt"
+    soft_fail:
+      - exit_status: 1
+    env:
+      SONARQUBE_TOKEN_VALUE
     plugins:
       - seek-oss/aws-sm#v2.3.1:
           env:
-            SARIFT_SECRET: "sarif-token"
-      - "ssh://git@github.com/ROKT/upload-sarif-buildkite-plugin.git#v1.0.0":
-          repository: 'dotnet-spider'
-          sarift: "SARIFT_SECRET"
-          commit: ${BUILDKITE_COMMIT}
+            SONARQUBE_TOKEN_VALUE: "${SONARQUBE_ACCESS_TOKEN}"
+      - ecr#v2.0.0:
+          login: true
+          account_ids: "${PLATFORM_AWS_ACCOUNT_ID}"
+      - docker#v3.3.0:
+          image: "${PLATFORM_AWS_ACCOUNT_ID}.dkr.ecr.us-west-2.amazonaws.com/${BUILDER_IMAGE}:${BUILDER_TAG}"
+          environment: 
+            - "SONARQUBE_TOKEN_VALUE"
+          propogate-environment: true
+    agents:
+      queue: eng-default 
+
+
       
