@@ -23,7 +23,7 @@ dotnet sonarscanner begin \
         /d:sonar.login="${SONARQUBE_TOKEN_VALUE_ENV}" \
         /d:sonar.branch.name="feature/sonarqube"
 
-find ./src -name '*DotnetSpider.csproj' | xargs -I % dotnet build % >> scs_results.txt
+find ./src -name '*DotnetSpider.Agent.csproj' | xargs -I % dotnet build % >> scs_results.txt
 
 dotnet sonarscanner end \
         /d:sonar.login="${SONARQUBE_TOKEN_VALUE_ENV}"
