@@ -25,6 +25,9 @@ find ./src -name '*.csproj' | xargs -I % dotnet add % package \
 find ./src -name '*.csproj' | xargs -I % dotnet add % package \
     SecurityCodeScan.VS2019 --version 5.1.0
 
+find ./src -name '*.csproj' | xargs -I % dotnet add % package \
+    HtmlAgilityPack --version 1.11.39
+
 dotnet sonarscanner begin \
         /k:"${PROJECT_NAME}" \
         /d:sonar.host.url="${SONARQUBE_HOST_URL}" \
