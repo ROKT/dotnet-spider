@@ -2,22 +2,11 @@
 
 set -euo pipefail
 
-echo "--- Directory structure"
-
-ls -al
-
-echo "--- Finding package props file"
-
-find . -name "package.props"
-
-echo "Restores and builds the solution for SAST"
+echo "--- Restores and builds the solution for SAST"
 
 SONARQUBE_HOST_URL="https://sonarqube.eng.roktinternal.com"
 PROJECT_NAME="dotnet-spider"
 SONARQUBE_TOKEN_VALUE_ENV=${1:?"Missing argument \$1 for SonarQube token"}
-
-dotnet restore DotnetSpider.sln \
-    --verbosity quiet
 
 find ./src -name '*.csproj' | xargs -I % dotnet add % package \
     Microsoft.Net.Compilers.Toolset --version 3.8.0
