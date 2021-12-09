@@ -2,6 +2,14 @@
 
 set -euo pipefail
 
+echo "--- Directory structure"
+
+ls -al
+
+echo "--- Finding package props file"
+
+find . -name "package.props"
+
 echo "Restores and builds the solution for SAST"
 
 SONARQUBE_HOST_URL="https://sonarqube.eng.roktinternal.com"
